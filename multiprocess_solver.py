@@ -17,7 +17,6 @@ class DataContainer:
 
 #======================== EOF  =============================#
 
-
 if __name__ == '__main__':
     NUM_THREAD = 2
     pool = Pool(NUM_THREAD)
@@ -25,7 +24,5 @@ if __name__ == '__main__':
     input_queue = [DataContainer() for _ in xrange(T)]
     result = pool.map(solver, input_queue)
 
-    for i in range(1, 1+T):
+    for i in range(0, T):
         print 'Case #%d: %s' % (i+1, result[i])
-    #'\n'.join(map(lambda i: 'Case #%d: %s' % (i+1, result[i]), range(T)))
-
